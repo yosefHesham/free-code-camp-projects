@@ -7,6 +7,7 @@ var bGround = require("fcc-express-bground");
 var myApp = require("./myApp");
 var express = require("express");
 var app = express();
+app.use(express.json());
 
 if (!process.env.DISABLE_XORIGIN) {
   app.use(function (req, res, next) {
