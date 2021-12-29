@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/json", (req, res) => {
-  res.send({ message: "hello json" });
+  res.send({ message: "Hello json" });
 });
 
 module.exports = app;
