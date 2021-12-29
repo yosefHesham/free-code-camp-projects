@@ -8,7 +8,7 @@ console.log("hello world");
 // });
 
 app.get("/", (req, res) => {
-  const path = __dirname + "views/index.html";
+  const path = __dirname + "/views/index.html";
   res.sendFile(path);
 });
 
