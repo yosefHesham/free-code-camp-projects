@@ -18,4 +18,15 @@ app.get("/json", logger, (req, res) => {
     message: mssg,
   });
 });
+
+app.get(
+  "/now",
+  function (req, res, next) {
+    req.time = Date.now().toString();
+    next();
+  },
+  (req, res) => {
+    res.json({ time: req.time });
+  }
+);
 module.exports = app;
