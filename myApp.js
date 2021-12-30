@@ -1,5 +1,6 @@
 require("dotenv").config();
 var express = require("express");
+const logger = require("./middlewares/logger");
 var app = express();
 
 app.use("/public", express.static(__dirname + "/public"));
@@ -8,7 +9,7 @@ app.get("/", (req, res) => {
   const path = __dirname + "/views/index.html";
   res.sendFile(path);
 });
-app.get("/json", (req, res) => {
+app.get("/json", logger, (req, res) => {
   let mssg = "Hello json";
   if (process.env.MESSAGE_STYLE === "uppercase") {
     mssg = "HELLO JSON";
