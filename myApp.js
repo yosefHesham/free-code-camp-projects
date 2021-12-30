@@ -22,7 +22,7 @@ app.get("/json", logger, (req, res) => {
 app.get(
   "/now",
   function (req, res, next) {
-    req.time = Date.now().toString();
+    req.time = (Date.now() + 20).toString();
     next();
   },
   (req, res) => {
